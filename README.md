@@ -8,7 +8,7 @@ En la siguiente App creada bajo Laravel 7.30, se pone a prueba la funcionalidad 
 
 Para una mejor prueba de la misma, se incluyen el `Dockerfile`, `docker-compose.yml`, `000-default.conf` para levantar todos los servicios necesarios. Nótese que además están disponibles los `.env`, por lo que una vez arrancados todos los servicios sólo será necesario importar la copia de la base de datos (`laravel.sql`) desde `phpmyadmin`.
 
-Los pasos a seguir levantar la app son:
+Los pasos a seguir para levantar la app son:
 1. Descargar o clonar el repositorio
 2. Ejecutar `docker-compose up`. Este proceso tardará unos minutos, puesto que debe de construir la imagen del `Dockerfile`.
 3. Nos dirigimos a `localhost:9000` (para entrar a `phpmyadmin`) e ingresamos con `laravel_user` y `userlaravel` como contrasseña.
