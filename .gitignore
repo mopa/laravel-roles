@@ -1,0 +1,12 @@
+gcapp/node_modules
+gcapp/public/hot
+gcapp/public/storage
+gcapp/storage/*.key
+gcapp/vendor
+gcapp/Homestead.json
+gcapp/Homestead.yaml
+gcapp/npm-debug.log
+gcapp/yarn-error.log
+# .env
+# .env.backup
+.phpunit.result.cache
