@@ -1,0 +1,40 @@
+version: '3'
+services:
+  web:
+    build:
+        args:
+            user: prismo
+            uid: 1000
+        context: ./
+    ports:
+      - '80:80'
+    links:
+        - 'mysql'
+    volumes:
+      - ./${APP}:/app
+    #command:  php artisan serve --host 0.0.0.0
+    #domainname: local
+    environment:
+        environment: dev
+        # PHP_IDE_CONFIG: "serverName=XdebugPHP"
+  mysql:
+    image: 'mysql'
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASS}
+      MYSQL_PASSWORD: ${DATABASE_PASS}
+      MYSQL_USER: ${DATABASE_USER}
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin'
+    ports: 
+      - '9000:80'
+    links:
+      - 'mysql:db'
+volumes:
+  mysql-data:
+
